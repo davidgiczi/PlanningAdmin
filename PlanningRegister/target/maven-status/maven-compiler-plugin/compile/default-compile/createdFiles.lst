@@ -1,0 +1,11 @@
+hu\david\giczi\catvhungaria\planningregister\servlet\GetPlanRegistrations.class
+hu\david\giczi\catvhungaria\planningregister\model\PlanningRegisterListener.class
+hu\david\giczi\catvhungaria\planningregister\model\TimeStamp.class
+hu\david\giczi\catvhungaria\planningregister\model\PlanMetaData.class
+hu\david\giczi\catvhungaria\planningregister\servlet\GetAllRegistrations.class
+hu\david\giczi\catvhungaria\planningregister\servlet\InputData.class
+hu\david\giczi\catvhungaria\planningregister\servlet\DeleteRecord.class
+hu\david\giczi\catvhungaria\planningregister\model\Names.class
+hu\david\giczi\catvhungaria\planningregister\model\PlanComparator.class
+hu\david\giczi\catvhungaria\planningregister\servlet\ModifyRecord.class
+hu\david\giczi\catvhungaria\planningregister\servlet\Init.class
