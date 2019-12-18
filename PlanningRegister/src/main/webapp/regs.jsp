@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -36,6 +35,7 @@ th, td {
     <th style="background-color:WhiteSmoke; ">Road Statement</th>
     <th style="background-color:WhiteSmoke; ">Owner Statement</th>
     <th style="background-color:WhiteSmoke; ">Planning is Ready</th>
+    <th style="background-color:WhiteSmoke; ">E-mail</th>
   </tr>
 
 	<c:forEach items="${regs}" var="reg" varStatus="loop">
@@ -116,10 +116,15 @@ th, td {
     
      <c:if test = "${reg.isOK}">
           <td style="background-color:#ffef96; ">Igen</td>
+          <td style="background-color:#ffef96; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
+    								<input type="submit" value="Show"></form></td>
       </c:if>
     <c:if test = "${!reg.isOK}">
           <td style="background-color:WhiteSmoke; ">Nem</td>
+          <td style="background-color:WhiteSmoke; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
+    								<input type="submit" value="Show"></form></td>
       </c:if>
+    
     
    
    </c:if> 
@@ -199,14 +204,19 @@ th, td {
     
      <c:if test = "${reg.isOK}">
           <td style="background-color:#ffef96; ">Igen</td>
+          <td style="background-color:#ffef96; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
+     								<input type="submit" value="Show"></form></td>
       </c:if>
     <c:if test = "${!reg.isOK}">
           <td>Nem</td>
+          <td><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
+     								<input type="submit" value="Show"></form></td>
       </c:if>
     
+  
       	</tr>
   </c:if>
-    
+   
     </c:forEach>
 	</table><br>
 
@@ -244,7 +254,8 @@ th, td {
 	 <form  action="GetAllRegistrations">
 	 	 <input type="hidden" value="back" name="back"/>
    		 <input type="submit" value="Back" />
-	</form>		
+	</form>			
+		
 		
 </body>
 

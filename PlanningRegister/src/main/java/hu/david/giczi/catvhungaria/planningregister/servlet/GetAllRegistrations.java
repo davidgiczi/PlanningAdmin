@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import hu.david.giczi.catvhungaria.planningregister.model.PlanComparator;
 import hu.david.giczi.catvhungaria.planningregister.model.PlanMetaData;
@@ -169,6 +170,8 @@ public class GetAllRegistrations extends HttpServlet {
 			allRegistrations=query.getResultList();
 			
 			Collections.sort(allRegistrations, new PlanComparator());
+			
+			setSession(allRegistrations, request);
 		
 			request.setAttribute("regs", allRegistrations);
 			
@@ -255,7 +258,6 @@ public class GetAllRegistrations extends HttpServlet {
 		
 		yearRegistrations=query.getResultList();
 		
-		
 		if(yearRegistrations.isEmpty()) {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
@@ -269,6 +271,8 @@ public class GetAllRegistrations extends HttpServlet {
 		
 		
 		Collections.sort(yearRegistrations, new PlanComparator());
+		
+		setSession(yearRegistrations, request);
 	
 		request.setAttribute("regs", yearRegistrations);
 		
@@ -459,6 +463,8 @@ try {
 			
 			searchRegistrations=new ArrayList<>();
 			
+			
+			
 			for (PlanMetaData planMetaData : store) {
 				
 				
@@ -484,6 +490,9 @@ try {
 				return;
 				
 			}
+			
+			
+			setSession(searchRegistrations, request);
 			
 			request.setAttribute("regs", searchRegistrations);
 			
@@ -600,6 +609,15 @@ try {
 			
 		}
 		
+		
+	}
+	
+	private void setSession(List<PlanMetaData> store, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("store", store);
+		session.setAttribute("fromAll", true);
 		
 	}
 	

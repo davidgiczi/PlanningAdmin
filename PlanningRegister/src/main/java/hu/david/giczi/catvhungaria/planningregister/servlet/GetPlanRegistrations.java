@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import hu.david.giczi.catvhungaria.planningregister.model.PlanMetaData;
 import hu.david.giczi.catvhungaria.planningregister.model.TimeStamp;
@@ -121,6 +121,9 @@ public class GetPlanRegistrations extends HttpServlet {
 			Collections.sort(planRegistrations);
 			
 			if(!planRegistrations.isEmpty() || planRegistrations.size()>Integer.parseInt(storedPlanNumber)-1) {
+				
+				
+				setSession(planRegistrations, request);
 				
 				request.setAttribute("regs", planRegistrations);
 				
@@ -270,6 +273,8 @@ public class GetPlanRegistrations extends HttpServlet {
 		
 		Collections.sort(planRegistrations);
 		
+		setSession(planRegistrations, request);
+		
 		request.setAttribute("regs", planRegistrations);
 			
 		request.setAttribute("fromAll", false);
@@ -330,6 +335,16 @@ try {
 		}
 		
 	}
+	
+	private void setSession(List<PlanMetaData> store,  HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("store", store);
+		session.setAttribute("fromAll", false);
+		
+	}
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
