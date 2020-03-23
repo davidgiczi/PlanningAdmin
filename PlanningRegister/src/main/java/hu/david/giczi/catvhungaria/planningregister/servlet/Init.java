@@ -36,7 +36,7 @@ public class Init extends HttpServlet {
 			
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
-			
+			request.setAttribute("msg", -1);
 			request.getRequestDispatcher("start.jsp").forward(request, response);
 			
 			

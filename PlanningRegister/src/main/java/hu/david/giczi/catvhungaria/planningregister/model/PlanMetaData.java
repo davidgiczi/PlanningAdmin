@@ -36,6 +36,8 @@ public class PlanMetaData implements Serializable, Comparable<PlanMetaData> {
 	public PlanMetaData(String planNumber, String planName, String nameOfCATVControlPerson, String dateOfCATVControl,
 			String nameOfUPCControlPerson, String dateOfUPCControl, String ekozmu, String roadStatement,  String ownerStatement, String comment, Boolean isOK) {
 		
+		
+			
 		this.planNumber = "CATV-"+planNumber+"/"+TimeStamp.getYear();
 		this.planName = planName;
 		this.nameOfCATVControlPerson = nameOfCATVControlPerson;
@@ -205,21 +207,113 @@ public class PlanMetaData implements Serializable, Comparable<PlanMetaData> {
 		return this.getId()<o.getId() ? -1 : this.getId()==o.getId() ? 0 : 1;
 	}
 
+	
+	
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
+		result = prime * result + ((dateOfCATVControl == null) ? 0 : dateOfCATVControl.hashCode());
+		result = prime * result + ((dateOfUPCControl == null) ? 0 : dateOfUPCControl.hashCode());
+		result = prime * result + ((ekozmu == null) ? 0 : ekozmu.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((isOK == null) ? 0 : isOK.hashCode());
+		result = prime * result + ((nameOfCATVControlPerson == null) ? 0 : nameOfCATVControlPerson.hashCode());
+		result = prime * result + ((nameOfUPCControlPerson == null) ? 0 : nameOfUPCControlPerson.hashCode());
+		result = prime * result + ((ownerStatement == null) ? 0 : ownerStatement.hashCode());
+		result = prime * result + ((planName == null) ? 0 : planName.hashCode());
+		result = prime * result + ((planNumber == null) ? 0 : planNumber.hashCode());
+		result = prime * result + ((roadStatement == null) ? 0 : roadStatement.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PlanMetaData other = (PlanMetaData) obj;
+		if (comment == null) {
+			if (other.comment != null)
+				return false;
+		} else if (!comment.equals(other.comment))
+			return false;
+		if (dateOfCATVControl == null) {
+			if (other.dateOfCATVControl != null)
+				return false;
+		} else if (!dateOfCATVControl.equals(other.dateOfCATVControl))
+			return false;
+		if (dateOfUPCControl == null) {
+			if (other.dateOfUPCControl != null)
+				return false;
+		} else if (!dateOfUPCControl.equals(other.dateOfUPCControl))
+			return false;
+		if (ekozmu == null) {
+			if (other.ekozmu != null)
+				return false;
+		} else if (!ekozmu.equals(other.ekozmu))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (isOK == null) {
+			if (other.isOK != null)
+				return false;
+		} else if (!isOK.equals(other.isOK))
+			return false;
+		if (nameOfCATVControlPerson == null) {
+			if (other.nameOfCATVControlPerson != null)
+				return false;
+		} else if (!nameOfCATVControlPerson.equals(other.nameOfCATVControlPerson))
+			return false;
+		if (nameOfUPCControlPerson == null) {
+			if (other.nameOfUPCControlPerson != null)
+				return false;
+		} else if (!nameOfUPCControlPerson.equals(other.nameOfUPCControlPerson))
+			return false;
+		if (ownerStatement == null) {
+			if (other.ownerStatement != null)
+				return false;
+		} else if (!ownerStatement.equals(other.ownerStatement))
+			return false;
+		if (planName == null) {
+			if (other.planName != null)
+				return false;
+		} else if (!planName.equals(other.planName))
+			return false;
+		if (planNumber == null) {
+			if (other.planNumber != null)
+				return false;
+		} else if (!planNumber.equals(other.planNumber))
+			return false;
+		if (roadStatement == null) {
+			if (other.roadStatement != null)
+				return false;
+		} else if (!roadStatement.equals(other.roadStatement))
+			return false;
+		return true;
+	}
+
 
 
 	@Override
 	public String toString() {
-		return "PlanMetaData [id=" + id + ", planNumber=" + planNumber + ", planName=" + planName
-				+ ", nameOfCATVControlPerson=" + nameOfCATVControlPerson + ", dateOfCATVControl=" + dateOfCATVControl
-				+ ", nameOfUPCControlPerson=" + nameOfUPCControlPerson + ", dateOfUPCControl=" + dateOfUPCControl
-				+ ", ekozmu=" + ekozmu + ", roadStatement=" + roadStatement + ", ownerStatement=" + ownerStatement
-				+ ", comment=" + comment + ", isOK=" + isOK + "]";
+		return id + "^"+planNumber + "^" + planName+"^" + nameOfCATVControlPerson + "^" + dateOfCATVControl
+				+ "^" + nameOfUPCControlPerson + "^" + dateOfUPCControl+"^" + comment +"^" + ekozmu + "^"
+				+ roadStatement + "^" + ownerStatement+"^" + isOK;
 	}
 
 
 	
-	
-
-	
-	
+		
 }

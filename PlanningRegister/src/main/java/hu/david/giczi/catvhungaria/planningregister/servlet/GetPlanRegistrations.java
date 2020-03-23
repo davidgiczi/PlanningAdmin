@@ -135,7 +135,7 @@ public class GetPlanRegistrations extends HttpServlet {
 			else {
 				
 				request.setAttribute("years", TimeStamp.getYears(5));
-				
+				request.setAttribute("msg", -1);
 				RequestDispatcher req=request.getRequestDispatcher("start.jsp");
 	    		pw.println("<h4>Plan with number \'"+number+"\' value not found!</h4>");
 	    		req.include(request, response);
@@ -148,7 +148,7 @@ public class GetPlanRegistrations extends HttpServlet {
 		else {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
-			
+			request.setAttribute("msg", -1);
 			RequestDispatcher req=request.getRequestDispatcher("start.jsp");
     		pw.println("<h4>Invalid input value, please, add it again!</h4>");
     		req.include(request, response);
@@ -161,7 +161,7 @@ public class GetPlanRegistrations extends HttpServlet {
 		catch(NumberFormatException e) {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
-			
+			request.setAttribute("msg", -1);
 			RequestDispatcher req=request.getRequestDispatcher("start.jsp");
     		pw.println("<h4>Invalid input value, please, add it again!</h4>");
     		req.include(request, response);

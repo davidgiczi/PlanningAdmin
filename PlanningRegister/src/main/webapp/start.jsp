@@ -53,9 +53,79 @@
 		<input type="text" name="search"/>
 		<input type="submit" value="Search" />
 		
+		</form><br>
+		
+		<form action="SaveDataToFile">
+		
+		<input type="submit" value="Save All Registrations to a File" />
+		
+		</form>
+		
+		<br>
+		
+		<form action="LoadDataFromFile" method="POST">
+		<p style="color:#484848">
+		
+		<input type="submit" value="Load Registrations from the File" /> C:\AllRegs\SavedRegs_
+		<select name="year">
+	
+			
+		<c:forEach items="${years}" var="year">
+   		 <option value="${year}">${year}</option>
+		</c:forEach>
+		</select> -
+		
+		<select name="month">
+	
+			
+		<c:forEach begin="1"  end="12" varStatus="i">
+   		 <option value="${i.index}">${i.index}</option>
+		</c:forEach>
+		</select> -
+		
+		<select name="day">
+		
+		<c:forEach begin="1"  end="31" varStatus="i">
+   		 <option value="${i.index}">${i.index}</option>
+		</c:forEach>
+		</select>.txt
+		
+		</p>
 		</form>
 		
 		<script type="text/javascript">
+		
+		var message = "${msg}";
+		
+		
+			
+		if( "yes" === message.substring(0, 3) ) {
+			
+			var date = new Date();
+			var yyyy = date.getFullYear();
+			var MM = date.getMonth() < 10 ? "0"+(date.getMonth()+1) : date.getMonth()+1;
+			var dd = date.getDate() < 10 ? "0"+date.getDate() : date.getDate();
+			
+			
+		alert(message.substring(3, message.length)+ " pcs registrations have saved: C:\\SavedRegs\\AllRegs_" + yyyy + "-" + MM + "-"  + dd + ".txt");
+			
+		}
+		else if ( "no" === message ) {
+			
+			alert("Unfortunately, the registrations cannot be saved. Create folder: \'C:\\SavedRegs\'");
+			
+		}
+		else if( "load" === message.substring(0, 4) ) {
+			
+			alert(message.substring(4, message.length)+" pcs registrations have loaded into the database.")
+			
+		}
+		else if( "notfound" === message.substring(0, 8) ) {
+			
+			alert("Unfortunately, registrations cannot be loaded into the database, maybe \'C:\\SavedRegs\\"+message.substring(8, message.length)+"\' file doesn't exist.")
+			
+		}
+		
 			function exit() {
 							
 				if(confirm("Would you like to exit?")){

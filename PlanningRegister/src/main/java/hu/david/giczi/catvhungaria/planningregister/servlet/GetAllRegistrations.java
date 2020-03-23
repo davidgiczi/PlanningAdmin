@@ -57,6 +57,8 @@ public class GetAllRegistrations extends HttpServlet {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
 			
+			request.setAttribute("msg", -1);
+			
 			request.getRequestDispatcher("start.jsp").forward(request, response);
 			
 			return;
@@ -261,7 +263,7 @@ public class GetAllRegistrations extends HttpServlet {
 		if(yearRegistrations.isEmpty()) {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
-			
+			request.setAttribute("msg", -1);
 			RequestDispatcher req=request.getRequestDispatcher("start.jsp");
     		pw.println("<h4>There aren't any registrations in "+ savedYear+".</h4>");
     		req.include(request, response);
@@ -443,7 +445,7 @@ try {
 		if("".equals(searchText)) {
 			
 			request.setAttribute("years", TimeStamp.getYears(5));
-			
+			request.setAttribute("msg", -1);
 			RequestDispatcher req=request.getRequestDispatcher("start.jsp");
     		pw.println("<h4>Invalid input value, please, add it again!</h4>");
     		req.include(request, response);
@@ -480,7 +482,7 @@ try {
 			if(searchRegistrations.isEmpty()) {
 				
 				request.setAttribute("years", TimeStamp.getYears(5));
-				
+				request.setAttribute("msg", -1);
 				RequestDispatcher req=request.getRequestDispatcher("start.jsp");
 	    		pw.println("<h4>Record by text \'"+searchText+ "\' not found!</h4>");
 	    		req.include(request, response);
