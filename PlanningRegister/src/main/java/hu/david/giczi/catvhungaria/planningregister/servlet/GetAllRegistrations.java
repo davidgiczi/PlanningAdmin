@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import hu.david.giczi.catvhungaria.planningregister.model.HighlightedPlanMetaData;
 import hu.david.giczi.catvhungaria.planningregister.model.PlanComparator;
 import hu.david.giczi.catvhungaria.planningregister.model.PlanMetaData;
 import hu.david.giczi.catvhungaria.planningregister.model.TimeStamp;
@@ -496,7 +495,18 @@ try {
 			
 			setSession(searchRegistrations, request);
 			
-			request.setAttribute("regs", searchRegistrations);
+			if( !HighlightedPlanMetaData.highlightedPlanMetaDataStore.isEmpty() ) {
+				HighlightedPlanMetaData.clearHighlightedPlanMetaDataStore();
+			}
+			
+			for (PlanMetaData planMetaData : searchRegistrations) {
+				
+				new HighlightedPlanMetaData(planMetaData, searchText).createHighlightedGeoJob();
+				
+			}
+			
+			
+			request.setAttribute("regs", HighlightedPlanMetaData.highlightedPlanMetaDataStore);
 			
 			request.setAttribute("fromAll", true);
 			

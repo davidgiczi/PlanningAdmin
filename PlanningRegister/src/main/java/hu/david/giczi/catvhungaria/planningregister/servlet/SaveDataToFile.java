@@ -41,9 +41,9 @@ public class SaveDataToFile extends HttpServlet {
 		try {
 
 			TypedQuery<PlanMetaData> query = em.createQuery("SELECT p FROM PlanMetaData p", PlanMetaData.class);
-
+			String path = "C:\\SavedRegs\\Allregs_" + TimeStamp.timeStamp() + ".txt";
 			out = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream(new File("C:\\SavedRegs\\Allregs_" + TimeStamp.timeStamp() + ".txt"))));
+					new FileOutputStream(new File(path))));
 
 			List<PlanMetaData> allRegs = query.getResultList();
 			
@@ -58,6 +58,8 @@ public class SaveDataToFile extends HttpServlet {
 			out.close();
 
 			request.setAttribute("msg", "yes" + allRegs.size());
+			
+			Runtime.getRuntime().exec("notepad.exe " + path);
 
 		} catch (IOException e) {
 
