@@ -6,7 +6,7 @@
 
 <title>Modify a Record</title>
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color:#ffc87a;">
 
 <h1 align="center" style="color:white">Modify a Record of a Plan</h1><hr><br>
 
@@ -29,11 +29,11 @@
 		Owner Statement: <input type="text" size="30" maxlength="255" value="${record.ownerStatement}" name="owner"/><br><br>
 		
 		<c:if test="${ready}">
-		Planning is ready: <input type="checkbox" value="true" name="ready" checked="checked"/><br><br>
+		Planning is ready: <input type="checkbox" value="true" name="ready" checked="checked" style="cursor: pointer"/><br><br>
 		</c:if>
 		
 		<c:if test="${!ready}">
-		Planning is ready: <input type="checkbox" value="true" name="ready"/><br><br>
+		Planning is ready: <input type="checkbox" value="true" name="ready" style="cursor: pointer"/><br><br>
 		</c:if>
 			
 		
@@ -46,20 +46,20 @@
 		</c:if>
 		
 		
-   		<input type="submit" value="Modify" />
+   		<input type="submit" value="Modify" style="cursor: pointer"/>
    	
 		
 </form><hr><br>
 
 		<c:if test="${fromAll}">
 		<form method="POST" action="GetAllRegistrations">
-   		 <input type="submit" value="Back" />
+   		 <input type="submit" value="Back" style="cursor: pointer"/>
 		</form>
 	</c:if>
 	
 	<c:if test="${!fromAll}">
 		<form method="POST" action="GetPlanRegistrations">
-   		 <input type="submit" value="Back" />
+   		 <input type="submit" value="Back" style="cursor: pointer"/>
 		</form>
 	</c:if>
 

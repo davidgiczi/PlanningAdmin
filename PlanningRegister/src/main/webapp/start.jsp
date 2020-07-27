@@ -10,19 +10,19 @@
 
 
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color:#ffc87a;">
 
 	 	<h1 align="center" style="color:white">CATV Planning Register</h1><hr>
 
 		<form method="POST" action="Init">
-   		 <input type="submit" value="Register a Plan" />
+   		 <input type="submit" value="Register a Plan" style="cursor: pointer"/>
 		</form>
 		
-		<button type="button" onclick="exit()" style="float:right">Exit</button><br>
+		<button type="button" onclick="exit()" style="float:right;cursor: pointer">Exit</button><br>
 		
 		<form action="GetAllRegistrations">
-   		 <input type="submit" value="Show Registrations" />
-   		 <select name="year">
+   		 <input type="submit" value="Show Registrations" style="cursor: pointer"/>
+   		 <select name="year" style="cursor: pointer">
 	
 		 <option value="all">All</option>	
 		<c:forEach items="${years}" var="year">
@@ -35,7 +35,7 @@
 		<form method="POST" action="GetPlanRegistrations">
 		<h3 style="color:white">Add the Number of a Plan:</h3><input type="text" name="plan"/>/
 		
-		<select name="year">
+		<select name="year" style="cursor: pointer">
 	
 			
 		<c:forEach items="${years}" var="year">
@@ -45,19 +45,19 @@
 		
 		
 		
-   		 <input type="submit" value="Show the Registrations of the Plan" />
+   		 <input type="submit" value="Show the Registrations of the Plan" style="cursor: pointer"/>
 		</form><br>
 		
 		<form action="GetAllRegistrations" accept-charset="UTF-8">
 		
 		<input type="text" name="search"/>
-		<input type="submit" value="Search" />
+		<input type="submit" value="Search" style="cursor: pointer"/>
 		
 		</form><br>
 		
 		<form action="SaveDataToFile">
 		
-		<input type="submit" value="Save All Registrations to a File" />
+		<input type="submit" value="Save All Registrations to a File" style="cursor: pointer"/>
 		
 		</form>
 		
@@ -66,8 +66,8 @@
 		<form action="LoadDataFromFile" method="POST">
 		<p style="color:#484848">
 		
-		<input type="submit" value="Load Registrations from the File" /> C:\AllRegs\SavedRegs_
-		<select name="year">
+		<input type="submit" value="Load Registrations from the File" style="cursor: pointer"/> C:\AllRegs\SavedRegs_
+		<select name="year" style="cursor: pointer">
 	
 			
 		<c:forEach items="${years}" var="year">
@@ -75,7 +75,7 @@
 		</c:forEach>
 		</select> -
 		
-		<select name="month">
+		<select name="month" style="cursor: pointer">
 	
 			
 		<c:forEach begin="1"  end="12" varStatus="i">
@@ -83,7 +83,7 @@
 		</c:forEach>
 		</select> -
 		
-		<select name="day">
+		<select name="day" style="cursor: pointer">
 		
 		<c:forEach begin="1"  end="31" varStatus="i">
    		 <option value="${i.index}">${i.index}</option>
@@ -91,7 +91,9 @@
 		</select>.txt
 		
 		</p>
-		</form>
+		</form><br>
+	
+	<a href="initGeoJobProject"><button style="cursor: pointer">Geodesy</button></a>
 		
 		<script type="text/javascript">
 		

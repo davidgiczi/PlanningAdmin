@@ -20,7 +20,7 @@ th, td {
 
 
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color:#ffc87a;">
 
 <h1 align="center" style="color:white">Are you sure you want to delete the record?</h1><br>
 
@@ -78,32 +78,32 @@ th, td {
       </c:if>
     
 </tr>
-</table><br><hr><br>
+</table><br><br>
 
 
 <c:if test="${fromAll}">
 
 		<form method="GET" action="DeleteRecord">
-   		<input type="submit" value="Yes"/>
+   		<input type="submit" value="Yes" style="cursor: pointer"/>
    		<input type="hidden" value="${reg.id}" name="id" />
    		<input type="hidden" value="true" name="fromAll" />
 		</form>
 		 
 		<form method="POST" action="GetAllRegistrations">
-		<input type="submit" value="No" style="float:right" />
+		<input type="submit" value="No" style="float:right;cursor: pointer" />
 		</form>
 </c:if>
 
 <c:if test="${!fromAll}">
 		
 		<form method="GET" action="DeleteRecord">
-   		<input type="submit" value="Yes"/>
+   		<input type="submit" value="Yes" style="cursor: pointer"/>
    		<input type="hidden" value="${reg.id}" name="id" />
    		<input type="hidden" value="false" name="fromAll" />
 		</form>
 
 		<form method="POST" action="GetPlanRegistrations">
-		<input type="submit" value="No" style="float:right" />
+		<input type="submit" value="No" style="float:right;cursor: pointer" />
 		</form>
 </c:if>
 

@@ -19,7 +19,7 @@ th, td {
 </style>
 
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color:#ffc87a;">
 	
 	<table style="width:100%" >
   <tr>
@@ -82,47 +82,51 @@ th, td {
     <c:if test="${reg.isOK}">
     	
     
-    <td style="background-color:#ffef96; ">${loop.count}</td>
-    <td style="background-color:#ffef96; ">${reg.planNumber}</td>
-    <td style="background-color:#ffef96; ">${reg.planName}</td> 
-    <td style="background-color:#ffef96; ">${reg.nameOfCATVControlPerson}</td>
-    <td style="background-color:#ffef96; ">${reg.dateOfCATVControl}</td>
-    <td style="background-color:#ffef96; ">${reg.nameOfUPCControlPerson}</td> 
-    <td style="background-color:#ffef96; ">${reg.dateOfUPCControl}</td>
-    <td style="background-color:#ffef96; ">${reg.comment}</td>
+    <td style="background-color:#87e187; ">${loop.count}</td>
+    <td style="background-color:#87e187; ">${reg.planNumber}</td>
+    <td style="background-color:#87e187; ">${reg.planName}</td> 
+    <td style="background-color:#87e187; ">${reg.nameOfCATVControlPerson}</td>
+    <td style="background-color:#87e187; ">${reg.dateOfCATVControl}</td>
+    <td style="background-color:#87e187; ">${reg.nameOfUPCControlPerson}</td> 
+    <td style="background-color:#87e187; ">${reg.dateOfUPCControl}</td>
+    <td style="background-color:#87e187; ">${reg.comment}</td>
     
     <c:if test = "${empty reg.ekozmu}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.ekozmu}">
-          <td style="background-color:#ffef96; ">${reg.ekozmu}</td>
+          <td style="background-color:#87e187; ">${reg.ekozmu}</td>
       </c:if>
     
     <c:if test = "${empty reg.roadStatement}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.roadStatement}">
-          <td style="background-color:#ffef96; ">${reg.roadStatement}</td>
+          <td style="background-color:#87e187; ">${reg.roadStatement}</td>
       </c:if>
       
     <c:if test = "${empty reg.ownerStatement}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.ownerStatement}">
-          <td style="background-color:#ffef96; ">${reg.ownerStatement}</td>
+          <td style="background-color:#87e187; ">${reg.ownerStatement}</td>
       </c:if>
     
     </c:if>
     
      <c:if test = "${reg.isOK}">
-          <td style="background-color:#ffef96; ">Igen</td>
-          <td style="background-color:#ffef96; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
-    								<input type="submit" value="Show"></form></td>
+          <td style="background-color:#87e187; ">Igen</td>
+          <td style="background-color:#87e187; "><form
+							action="ShowContent" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
+						</form></td>
       </c:if>
     <c:if test = "${!reg.isOK}">
           <td style="background-color:WhiteSmoke; ">Nem</td>
-          <td style="background-color:WhiteSmoke; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
-    								<input type="submit" value="Show"></form></td>
+          <td style="background-color:WhiteSmoke; "><form
+							action="ShowContent" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
+						</form></td>
       </c:if>
     
     
@@ -170,47 +174,50 @@ th, td {
     
     <c:if test="${reg.isOK}">
    				
-    <td style="background-color:#ffef96; ">${loop.count}</td>
-    <td style="background-color:#ffef96; ">${reg.planNumber}</td>
-    <td style="background-color:#ffef96; ">${reg.planName}</td> 
-    <td style="background-color:#ffef96; ">${reg.nameOfCATVControlPerson}</td>
-    <td style="background-color:#ffef96; ">${reg.dateOfCATVControl}</td>
-    <td style="background-color:#ffef96; ">${reg.nameOfUPCControlPerson}</td> 
-    <td style="background-color:#ffef96; ">${reg.dateOfUPCControl}</td>
-    <td style="background-color:#ffef96; ">${reg.comment}</td>
+    <td style="background-color:#87e187; ">${loop.count}</td>
+    <td style="background-color:#87e187; ">${reg.planNumber}</td>
+    <td style="background-color:#87e187; ">${reg.planName}</td> 
+    <td style="background-color:#87e187; ">${reg.nameOfCATVControlPerson}</td>
+    <td style="background-color:#87e187; ">${reg.dateOfCATVControl}</td>
+    <td style="background-color:#87e187; ">${reg.nameOfUPCControlPerson}</td> 
+    <td style="background-color:#87e187; ">${reg.dateOfUPCControl}</td>
+    <td style="background-color:#87e187; ">${reg.comment}</td>
     
     <c:if test = "${empty reg.ekozmu}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.ekozmu}">
-          <td style="background-color:#ffef96; ">${reg.ekozmu}</td>
+          <td style="background-color:#87e187; ">${reg.ekozmu}</td>
       </c:if>
     
     <c:if test = "${empty reg.roadStatement}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.roadStatement}">
-          <td style="background-color:#ffef96; ">${reg.roadStatement}</td>
+          <td style="background-color:#87e187; ">${reg.roadStatement}</td>
       </c:if>
       
     <c:if test = "${empty reg.ownerStatement}">
-          <td style="background-color:#ffef96; ">-</td>
+          <td style="background-color:#87e187; ">-</td>
       </c:if>
     <c:if test = "${not empty reg.ownerStatement}">
-          <td style="background-color:#ffef96; ">${reg.ownerStatement}</td>
+          <td style="background-color:#87e187; ">${reg.ownerStatement}</td>
       </c:if>
     
     		</c:if>
     
      <c:if test = "${reg.isOK}">
-          <td style="background-color:#ffef96; ">Igen</td>
-          <td style="background-color:#ffef96; "><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
-     								<input type="submit" value="Show"></form></td>
+          <td style="background-color:#87e187; ">Igen</td>
+          <td style="background-color:#87e187; "><form
+							action="ShowContent" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
+						</form></td>
       </c:if>
     <c:if test = "${!reg.isOK}">
           <td>Nem</td>
-          <td><form action="ShowContent" accept-charset="UTF-8"><input type="file" value="" name="url" size="5"><br><br>
-     								<input type="submit" value="Show"></form></td>
+          <td><form action="ShowContent" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
+						</form></td>
       </c:if>
     
   
@@ -225,11 +232,11 @@ th, td {
 	
 	<form method="POST" action="GetAllRegistrations">
 		<h3 style="color:white">Add the Number of a Record:</h3><input type="text" name="modify"/>
-   		<input type="submit" value="Modify a Record" />
+   		<input type="submit" value="Modify a Record" style="cursor: pointer"/>
 		</form>
 		<form method="GET" action="GetAllRegistrations">
 		<input type="text" name="del"/>
-   		<input type="submit" value="Delete a Record" />
+   		<input type="submit" value="Delete a Record" style="cursor: pointer"/>
 		</form><br>
 	 </c:if>
 	 
@@ -238,22 +245,22 @@ th, td {
 	
 		<form method="POST" action="GetPlanRegistrations">
 		<h3 style="color:white">Add the Number of a Record:</h3><input type="text" name="modify"/>
-   		<input type="submit" value="Modify a Record" />
+   		<input type="submit" value="Modify a Record" style="cursor: pointer"/>
 		</form>
 		<form method="GET" action="GetPlanRegistrations">
 		<input type="text" name="del"/>
-   		<input type="submit" value="Delete a Record" />
+   		<input type="submit" value="Delete a Record" style="cursor: pointer"/>
    		</form>
 		<form method="POST" action="GetPlanRegistrations">
 		<input type="hidden" value="closing" name="close"/>
-   		<input type="submit" style="float:right" value="Close the Plan" />
+   		<input type="submit" style="float:right" value="Close the Plan" style="cursor: pointer"/>
 		</form>
 	
 	 </c:if><br><hr><br>
 	 
 	 <form  action="GetAllRegistrations">
 	 	 <input type="hidden" value="back" name="back"/>
-   		 <input type="submit" value="Back" />
+   		 <input type="submit" value="Back" style="cursor: pointer"/>
 	</form>			
 		
 		

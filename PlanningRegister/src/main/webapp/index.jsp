@@ -18,7 +18,7 @@ form {
 </style>
 
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color:#ffc87a;">
 
 
 
@@ -27,7 +27,7 @@ form {
 		<form  method="POST" action="Init">
 		<input  type="password" name="user" placeholder="username"/><br><br>
 		<input type="password" name="pass" placeholder="password"/><br><br>
-   		 <input type="submit" value="Send" />
+   		 <input type="submit" value="Send" style="cursor: pointer"/>
 		</form>
 		
 			
